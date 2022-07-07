@@ -81,13 +81,32 @@ Secify the disk capacity 'split virtual disk into multiple file'
 
 ![image](https://user-images.githubusercontent.com/70070721/177866142-77ce909d-26e3-421f-b33f-cb82b7cf0526.png)
 
->> Next
+Click on 'Next'
+
 ![image](https://user-images.githubusercontent.com/70070721/177866149-d113a64a-ae01-49d7-9685-d838238f6455.png)
 
 Finally Click on 'Finsh'
+
 ![image](https://user-images.githubusercontent.com/70070721/177866156-cbe3fd1e-c34a-427d-b433-8ceebc6765ac.png)
 
+
+For now, you can wait until all files are set. It may take a few minutes, don't worry!
+
+![image](https://user-images.githubusercontent.com/70070721/177867882-aca8bb28-6c94-42be-a9c2-ea3e85ba02b6.png)
+
+
 ## <ins> Setup.</ins>
+
+Click on 'Edit Virtual Machine Settings' on the right
+![image](https://user-images.githubusercontent.com/70070721/177869969-1fcd27fa-00f2-43dd-b77d-d60068d3772e.png)
+
+then Click on CD/DVD 2 (SATA) then Choos 'Use ISO image file' then the ubunto 16 image
+![image](https://user-images.githubusercontent.com/70070721/177870070-de6d815d-541b-45e6-8571-9d513715aef3.png)
+
+then Click on CD/DVD (SATA) then Choos 'Use ISO image file' then the ubunto 16 image then on 'Ok'
+
+![image](https://user-images.githubusercontent.com/70070721/177870142-9ba076b5-b4de-4372-96b6-aa0aec595ffb.png)
+
 ## <ins> Install ROS kinetic.</ins>
 ## <ins> Lunch ROS.</ins>
 
