@@ -208,11 +208,15 @@ sudo rosdep init
 rosdep update
 ```
 ### Build farm status
+Create the catkin root and source folders:
 ```console
 sudo apt-get install ros-kinetic-catkin
 
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
+```
+Configure the catkin workspace by issuing a first “empty” build command:
+```console
 catkin_make
 cd ~/catkin_ws/src
 
@@ -221,13 +225,16 @@ cd ~/catkin_ws/src
 
 
 ## <ins> Lunch ROS.</ins>
+Launching ROS on a project from @Smart_methods for a robotic arm , Clone Github repository. 
 ```console
 git clone https://github.com/smart-methods/arduino_robot_arm.git 
-
+```
+Check the dependencies:
+```console
 cd ~/catkin_ws
 
 rosdep install --from-paths src --ignore-src -r -y
-
+```
 sudo apt-get install ros-kinetic-moveit
 
 sudo apt-get install ros-kinetic-joint-state-publisher ros-kinetic-joint-state-publisher-gui
@@ -236,8 +243,8 @@ sudo apt-get install ros-kinetic-gazebo-ros-control joint-state-publisher
 
 sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
 ```
-Launching ROS on a project from @Smart_methods for a robotic arm
 
+Finally, update your .bashrc script with the information about the new workspace:
 ```console
 sudo nano ~/.bashrc
 ```
