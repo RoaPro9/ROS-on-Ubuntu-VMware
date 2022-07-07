@@ -3,7 +3,7 @@ A walkthrough on installing ROS kinetic on Ubuntu 16.
 ### <ins>Steps:</ins>
 * Install VMware.
 * Download Ubunto.
-* Creat your new VM.
+* Create your new VM.
 * Setup.
 * Install ROS kinetic.
 * Lunch ROS.
