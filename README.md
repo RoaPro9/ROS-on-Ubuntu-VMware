@@ -97,7 +97,7 @@ For now, you can wait until all files are set. It may take a few minutes, don't 
 
 ## <ins> Setup.</ins>
 Sign in to your account with the same password you used previously.
-==Open your Terminal== to start updating the apt
+Open your Terminal to start updating the apt
 ```console
 sudo apt-get update
 ```
@@ -107,7 +107,7 @@ sudo apt-get upgrade
 ```console
 sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```
-it wil ask you to enter either Y/N , Enter =='Y'== 
+it wil ask you to enter either Y/N , Enter 'Y'
 
 Then powr off your VM ,
 Click on 'Edit Virtual Machine Settings' on the right
@@ -242,9 +242,9 @@ Launching ROS on a project from @Smart_methods for a robotic arm
 sudo nano ~/.bashrc
 ```
 at the end of the (bashrc) file add the follwing line
-==Make sure to change the username==
+Make sure to change the username
 ```console
-(source /home/==roamohamed==/catkin_ws/devel/setup.bash)
+(source /home/roamohamed/catkin_ws/devel/setup.bash)
 ```
 then 
 ctrl + o
