@@ -32,7 +32,7 @@ Ubuntu Desktop is a Linux distribution developed by Canonical, and it’s one of
 https://ubuntu.com/download
 
 
-## <ins> Creat your new VM.</ins>
+## <ins> Create your new VM.</ins>
 
 Open VMware and then Click on "Create a New Virtual Machine" 
 
