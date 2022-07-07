@@ -96,7 +96,20 @@ For now, you can wait until all files are set. It may take a few minutes, don't 
 
 
 ## <ins> Setup.</ins>
+Sign in to your account with the same password you used previously.
+==Open your Terminal== to start updating the apt
+```console
+sudo apt-get update
+```
+```console
+sudo apt-get upgrade
+```
+```console
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+```
+it wil ask you to enter either Y/N , Enter =='Y'== 
 
+Then powr off your VM ,
 Click on 'Edit Virtual Machine Settings' on the right
 ![image](https://user-images.githubusercontent.com/70070721/177869969-1fcd27fa-00f2-43dd-b77d-d60068d3772e.png)
 
@@ -108,9 +121,143 @@ then Click on CD/DVD (SATA) then Choos 'Use ISO image file' then the ubunto 16 i
 ![image](https://user-images.githubusercontent.com/70070721/177870142-9ba076b5-b4de-4372-96b6-aa0aec595ffb.png)
 
 ## <ins> Install ROS kinetic.</ins>
+### Installation
+ROS Kinetic ONLY supports Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) and Jessie (Debian 8) for debian packages.
+ 
+### Setup your sources.list
+
+
+```console
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+```
+### Set up your keys
+
+if you haven't already installed curl
+```console
+sudo apt install curl 
+```
+```console
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+```
+### Installation
+First, make sure your Debian package index is up-to-date:
+
+
+```console
+sudo apt-get update
+```
+Desktop-Full Install: (Recommended) : ROS, rqt, rviz, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
+```console
+sudo apt-get install ros-kinetic-desktop-full
+
+```
+To find available packages, use:
+```console
+apt-cache search ros-kinetic
+
+
+```
+### Environment setup
+It's convenient if the ROS environment variables are automatically added to your bash session every time a new shell is launched:
+
+```console
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+
+```
+```console
+source ~/.bashrc
+
+```
+If you have more than one ROS distribution installed, ~/.bashrc must only source the setup.bash for the version you are currently using.
+
+If you just want to change the environment of your current shell, instead of the above you can type:
+
+
+```console
+source /opt/ros/kinetic/setup.bash
+
+```
+If you use zsh instead of bash you need to run the following commands to set up your shell:
+
+
+```console
+echo "source /opt/ros/kinetic/setup.zsh" >> ~/.zshrc
+source ~/.zshrc
+```
+### Dependencies for building packages
+Up to now you have installed what you need to run the core ROS packages. To create and manage your own ROS workspaces, there are various tools and requirements that are distributed separately. For example, rosinstall is a frequently used command-line tool that enables you to easily download many source trees for ROS packages with one command.
+
+To install this tool and other dependencies for building ROS packages, run:
+```console
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+```
+#### Initialize rosdep
+Before you can use many ROS tools, you will need to initialize rosdep. rosdep enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS. If you have not yet installed rosdep, do so as follows.
+```console
+sudo apt install python-rosdep
+
+```
+With the following, you can initialize rosdep.
+
+
+
+```console
+sudo rosdep init
+rosdep update
+```
+### Build farm status
+```console
+sudo apt-get install ros-kinetic-catkin
+
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+cd ~/catkin_ws/src
+
+```
+
+
+
 ## <ins> Lunch ROS.</ins>
+```console
+git clone https://github.com/smart-methods/arduino_robot_arm.git 
 
+cd ~/catkin_ws
 
+rosdep install --from-paths src --ignore-src -r -y
+
+sudo apt-get install ros-kinetic-moveit
+
+sudo apt-get install ros-kinetic-joint-state-publisher ros-kinetic-joint-state-publisher-gui
+
+sudo apt-get install ros-kinetic-gazebo-ros-control joint-state-publisher
+
+sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
+```
+Launching ROS on a project from @Smart_methods for a robotic arm
+
+```console
+sudo nano ~/.bashrc
+```
+at the end of the (bashrc) file add the follwing line
+==Make sure to change the username==
+```console
+(source /home/==roamohamed==/catkin_ws/devel/setup.bash)
+```
+then 
+ctrl + o
+```console
+source ~/.bashrc
+
+```
+The final command to finally launch the project
+```console
+roslaunch robot_arm_pkg check_motors.launch
+
+```
+![image](https://user-images.githubusercontent.com/70070721/177879052-3e528fea-1509-4f44-9b6f-4624328cef66.png)
 
 
 
