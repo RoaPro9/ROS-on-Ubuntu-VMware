@@ -235,6 +235,7 @@ cd ~/catkin_ws
 
 rosdep install --from-paths src --ignore-src -r -y
 ```
+```console
 sudo apt-get install ros-kinetic-moveit
 
 sudo apt-get install ros-kinetic-joint-state-publisher ros-kinetic-joint-state-publisher-gui
@@ -248,6 +249,7 @@ Finally, update your .bashrc script with the information about the new workspace
 ```console
 sudo nano ~/.bashrc
 ```
+
 at the end of the (bashrc) file add the follwing line
 Make sure to change the username
 ```console
